@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace eAppointmentServer.Domain.Entities
+﻿namespace eAppointmentServer.Domain.Entities
 {
-    internal class AppUser
+    public sealed class AppUser
     {
     }
 }
