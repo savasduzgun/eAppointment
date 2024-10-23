@@ -17,8 +17,4 @@
     <ProjectReference Include="..\eAppointmentServer.Domain\eAppointmentServer.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Auth\Login\" />
-  </ItemGroup>
-
 </Project>
