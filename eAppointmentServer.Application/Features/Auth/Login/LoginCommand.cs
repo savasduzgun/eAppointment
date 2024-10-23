@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace eAppointmentServer.Application.Features.Auth.Login
 {
-    internal class LoginCommand
-    {
-    }
+    //Kullanıcı giriş için gereken değerler istenecek
+    public sealed record LoginCommand(
+        );
+    
+    
 }
