@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace eAppointmentServer.Infrastructure.Context
 {
-    internal class ApplicationDbContext
+    //Bu class ı diğer katmanlar direkt kullanamasın diye internal.
+    //Repository kullanıldığı için ya onun üzerinden yada Identity kütüphanesi için kullanılan user managerlar yada diğer managerlar üzerinden işlem yapabilmesi lazım.
+    internal sealed class ApplicationDbContext
     {
     }
 }
