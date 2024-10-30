@@ -20,4 +20,8 @@
     <ProjectReference Include="..\eAppointmentServer.Domain\eAppointmentServer.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
 </Project>
