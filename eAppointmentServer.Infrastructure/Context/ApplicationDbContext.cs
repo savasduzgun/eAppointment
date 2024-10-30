@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace eAppointmentServer.Infrastructure.Context
 {
@@ -26,6 +27,10 @@ namespace eAppointmentServer.Infrastructure.Context
             builder.Ignore<IdentityRoleClaim<Guid>>();
             builder.Ignore<IdentityUserLogin<Guid>>();
             builder.Ignore<IdentityUserToken<Guid>>();
+
+            //tablolara verilen özelliklerden yani configuration ayarlarından DbContext haberdar etmek için.
+            //IEntityTypeConfiguration ı inherit eden configuration class larının bulunduğu katmanın assembly si aynı katmanda olduğu için mevcut katmanın assembly si GetExecuting ile verilir.
+            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
