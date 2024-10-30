@@ -12,5 +12,6 @@ namespace eAppointmentServer.Infrastructure.Context
         {
             
         }
+        public DbSet<Doctor> Doctors { get; set; }
     }
 }
