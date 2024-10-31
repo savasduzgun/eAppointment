@@ -1,4 +1,5 @@
 ﻿using eAppointmentServer.Domain.Entities;
+using GenericRepository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,7 @@ namespace eAppointmentServer.Infrastructure.Context
 {
     //Bu class ı diğer katmanlar direkt kullanamasın diye internal.
     //Repository kullanıldığı için ya onun üzerinden yada Identity kütüphanesi için kullanılan user managerlar yada diğer managerlar üzerinden işlem yapabilmesi lazım.
-    internal sealed class ApplicationDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+    internal sealed class ApplicationDbContext : IdentityDbContext<AppUser, AppRole, Guid>, IUnitOfWork
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
