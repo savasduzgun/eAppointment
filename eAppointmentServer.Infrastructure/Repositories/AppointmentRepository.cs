@@ -11,4 +11,5 @@ namespace eAppointmentServer.Infrastructure.Repositories
         {
         }
     }
+    //bu repositoryler dependency injection yapılmalı ki uygulama Application katmanında bu interface i kullandığında hangi class a karşılık geleceğini bilmesi lazım bundan dolayı bunları infrastructure katmanında DependencyInjection classında haberdar edilir.
 }
