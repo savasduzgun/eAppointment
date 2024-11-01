@@ -1,7 +1,9 @@
-﻿using eAppointmentServer.Domain.Entities;
+﻿using eAppointmentServer.Application.Services;
+using eAppointmentServer.Domain.Entities;
 using eAppointmentServer.Domain.Repositories;
 using eAppointmentServer.Infrastructure.Context;
 using eAppointmentServer.Infrastructure.Repositories;
+using eAppointmentServer.Infrastructure.Services;
 using GenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +41,8 @@ namespace eAppointmentServer.Infrastructure
             //RepositoryPattern de UnitOfWorkPattern de kullanıldığı için, UnitOfWork de kayıt silme ve güncelleme işlemlerinde SaveChange metodunu ayrı şekilde çağırıp transaction ayrı yönetebilmeyi sağlar.ApplicationDbContext classı inheritine IUnitOfWork de eklenir.
             //IUnitOfWork inherit edildikten sonra dependencyinjection yapılır. Yani IUnitOfWork interface i ApplicationDbContex class ına bağlanır, çağrıldığında gelecek class.
             services.AddScoped<IUnitOfWork>(srv=>srv.GetRequiredService<ApplicationDbContext>());
+
+            services.AddScoped<IJwtProvider, JwtProvider>();
 
             return services;    
         }
