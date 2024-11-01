@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationManifest>Services\JwtProvider.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,10 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\eAppointmentServer.Application\eAppointmentServer.Application.csproj" />
     <ProjectReference Include="..\eAppointmentServer.Domain\eAppointmentServer.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
