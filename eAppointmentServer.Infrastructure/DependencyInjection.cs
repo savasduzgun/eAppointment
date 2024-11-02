@@ -48,12 +48,18 @@ namespace eAppointmentServer.Infrastructure
                 .WithScopedLifetime();
             });
 
+
+
+            //scrutor sonrası bunlara ihtiyaç kalmadı
+
+            /*
             //AddScope yaşam türüyle beraber repositoryinterface i biri inject ederek isterse hangi repository class ını vermesi gerektiği belirtiliyor.
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
 
             services.AddScoped<IJwtProvider, JwtProvider>();
+            */
 
             return services;
         }
