@@ -8,13 +8,14 @@ using GenericRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Scrutor;
 
 namespace eAppointmentServer.Infrastructure
 {
     public static class DependencyInjection
     {
         public static IServiceCollection AddInfrastructure(
-            this IServiceCollection services, 
+            this IServiceCollection services,
             IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -36,6 +37,16 @@ namespace eAppointmentServer.Infrastructure
             //IUnitOfWork inherit edildikten sonra dependencyinjection yapılır. Yani IUnitOfWork interface i ApplicationDbContex class ına bağlanır, çağrıldığında gelecek class.
             services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<ApplicationDbContext>());
 
+            //Scrutor
+            services.Scan(action =>
+            {
+                action
+                .FromAssemblies(typeof(DependencyInjection).Assembly)
+                .AddClasses(publicOnly: false)
+                .UsingRegistrationStrategy(registrationStrategy: RegistrationStrategy.Skip)
+                .AsImplementedInterfaces()
+                .WithScopedLifetime();
+            });
 
             //AddScope yaşam türüyle beraber repositoryinterface i biri inject ederek isterse hangi repository class ını vermesi gerektiği belirtiliyor.
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
@@ -44,7 +55,7 @@ namespace eAppointmentServer.Infrastructure
 
             services.AddScoped<IJwtProvider, JwtProvider>();
 
-            return services;    
+            return services;
         }
     }
 }
