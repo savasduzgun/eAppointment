@@ -37,7 +37,7 @@ namespace eAppointmentServer.Infrastructure
             //IUnitOfWork inherit edildikten sonra dependencyinjection yapılır. Yani IUnitOfWork interface i ApplicationDbContex class ına bağlanır, çağrıldığında gelecek class.
             services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<ApplicationDbContext>());
 
-            //Scrutor
+            //Scrutor, interface ve class olarak isimleri aynı olduğu sürece aralarında dependency injection ı gerçekleştirir.
             services.Scan(action =>
             {
                 action
