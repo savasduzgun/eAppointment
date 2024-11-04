@@ -13,7 +13,7 @@ namespace eAppointmentServer.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<AppUserRole> builder)
         {
-            builder.HasKey(k => new { k.UserId, k.RoleId });
+            
         }
     }
 }
