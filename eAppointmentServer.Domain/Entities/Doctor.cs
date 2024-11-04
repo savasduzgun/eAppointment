@@ -12,6 +12,6 @@ namespace eAppointmentServer.Domain.Entities
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public string FullName => string.Join(" ", FirstName, LastName);
-        public DepertmentEnum Depertment { get; set; } = DepertmentEnum.Acil;
+        public DepertmentEnum Department { get; set; } = DepertmentEnum.Acil;
     }
 }
