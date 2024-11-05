@@ -20,4 +20,8 @@
     <ProjectReference Include="..\eAppointmentServer.Infrastructure\eAppointmentServer.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+
 </Project>
