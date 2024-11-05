@@ -5,7 +5,7 @@ namespace eAppointmentServer.WebAPI
 {
     public static class Helper
     {
-        public static async Task CreateUser(WebApplication app)
+        public static async Task CreateUserAsync(WebApplication app)
         {
             using (var scoped = app.Services.CreateScope())
             {
