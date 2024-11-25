@@ -26,7 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors(); //Cors politikasý kullanýlacaðý belirtiliyor
 
 app.UseHttpsRedirection();
 
