@@ -34,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-Helper.CreateUserAsync(app).Wait();
+Helper.CreateUserAsync(app).Wait(); //kullanýcý yoksa oluþturmak için Helper class ýný kullanýr.
 
 app.Run();
